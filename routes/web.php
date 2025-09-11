@@ -5,7 +5,19 @@ use Illuminate\Support\Facades\Route;
 
 // Home page
 Route::get('/', function () {
-    return view('welcome');
+    return view('listings', [
+        'heading' => 'Latest Listings',
+        'listings' => [
+            [ 'id' => 1,
+              'title' => 'Listing One',
+              'description' => 'This is the description for listing one'
+            ],
+            [ 'id' => 2,
+              'title' => 'Listing Two',
+              'description' => 'This is the description for listing two'
+            ]
+        ]
+    ]);
 });
 
 // Simple HTML response
